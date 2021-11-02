@@ -3,8 +3,8 @@
 class Movie {
 
     public $titolo;
-    public $copertina;
-    public $trama;
+    private $copertina;
+    private $trama;
     public $anno;
 
     function __construct($_titolo, $_copertina, $_trama, $_anno)
@@ -13,11 +13,6 @@ class Movie {
         $this->copertina = $_copertina;
         $this->trama = $_trama;
         $this->anno = $_anno;
-    }
-
-    public function getTitolo()
-    {
-        return $this->titolo;
     }
     
     public function getCopertina()
@@ -28,11 +23,6 @@ class Movie {
     public function getTrama()
     {
         return $this->trama;
-    }
-    
-    public function getAnno()
-    {
-        return $this->anno;
     }
 
 }
@@ -54,19 +44,19 @@ $inception = new Movie("Inception", "Copertina Inception", "Descrizione Inceptio
         <h1>Movies</h1>
         <ul>
             <li> 
-                <?php echo "{$titanic->getTitolo()}" ?>
+                <?php echo "{$titanic->titolo}" ?>
                 <ul>
                     <li><?php echo "{$titanic->getCopertina()}" ?></li>
                     <li><?php echo "{$titanic->getTrama()}" ?></li>
-                    <li><?php echo "{$titanic->getAnno()}" ?></li>
+                    <li><?php echo "{$titanic->anno}" ?></li>
                 </ul>
             </li>
             <li> 
-                <?php echo "{$inception->getTitolo()}" ?> 
+                <?php echo "{$inception->titolo}" ?> 
                 <ul>
                     <li><?php echo "{$inception->getCopertina()}" ?></li>
                     <li><?php echo "{$inception->getTrama()}" ?></li>
-                    <li><?php echo "{$inception->getAnno()}" ?></li>
+                    <li><?php echo "{$inception->anno}" ?></li>
                 </ul>
             </li>
         </ul>
