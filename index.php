@@ -6,7 +6,16 @@ class Movie {
     private $copertina;
     private $trama;
     public $anno;
-
+    
+    /**
+     * __construct
+     *
+     * @param  string $_titolo
+     * @param  string $_copertina
+     * @param  string $_trama
+     * @param  int $_anno
+     * @return void
+     */
     function __construct($_titolo, $_copertina, $_trama, $_anno)
     {
         $this->titolo = $_titolo;
@@ -23,6 +32,21 @@ class Movie {
     public function getTrama()
     {
         return $this->trama;
+    }
+
+    public function getAnno()
+    {
+        return $this->anno;
+    }
+
+    public function setTrama($_trama)
+    {
+        $this->trama = $_trama;
+    }
+
+    public function setAnno($_anno)
+    {
+        $this->anno = $_anno;
     }
 
 }
@@ -56,7 +80,7 @@ $inception = new Movie("Inception", "Copertina Inception", "Descrizione Inceptio
                 <ul>
                     <li><?php echo "{$inception->getCopertina()}" ?></li>
                     <li><?php echo "{$inception->getTrama()}" ?></li>
-                    <li><?php echo "{$inception->anno}" ?></li>
+                    <li><?php echo "{$inception->setAnno(2005)} {$inception->getAnno()}" ?></li>
                 </ul>
             </li>
         </ul>
